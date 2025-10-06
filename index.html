@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f472b6">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Balqis</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, aku Balqis!</h1>
+    <p>Welcome to my website.</p>
+    <a href="about.html" class="btn">Learn More</a>
+     <button id="installBtn" class="btn" style="margin-top:20px; display:none;">Install Aplikasi 💕</button>
+  </section>
+
+  <section class="content">
+  <h2>Apa itu PWA?</h2>
+  <p>
+    Website ini sekarang sudah menjadi <b>Progressive Web App (PWA)</b>! 💖  
+    Artinya, kamu bisa menginstalnya seperti aplikasi dan tetap mengaksesnya walau sedang offline.
+  </p>
+</section>
+
+  <script>
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = 'inline-block';
+});
+
+installBtn.addEventListener('click', () => {
+  installBtn.style.display = 'none';
+  deferredPrompt.prompt();
+});
+</script>
+
+  <footer>
+    <p>📧 Email: balqisafradinata@gmail.com | 📸 Instagram: @balqisafradinata</p>
+  </footer>
+
+  <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('Service Worker terdaftar!'))
+    .catch((err) => console.log('SW gagal:', err));
+}
+</script>
+
+</body>
+</html>

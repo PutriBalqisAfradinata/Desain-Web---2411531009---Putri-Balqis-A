@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f472b6">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Balqis</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h1>Contact Me</h1>
+    <p>Silakan isi form berikut untuk mengirim pesan:</p>
+
+    <form class="contact-form" onsubmit="return sendForm(event)">
+      <!-- Nama -->
+      <input type="text" name="nama" placeholder="Nama" required>
+
+      <!-- Email -->
+      <input type="email" name="email" placeholder="Email" required>
+
+      <!-- Kategori pesan -->
+      <select name="kategori" required>
+        <option value="">-- Pilih kategori --</option>
+        <option value="pertanyaan">Pertanyaan</option>
+        <option value="saran">Saran</option>
+        <option value="masalah">Masalah</option>
+      </select>
+
+      <!-- Pesan -->
+      <textarea name="pesan" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+
+      <!-- Opsi balasan -->
+      <div>
+        <label><input type="radio" name="balasan" value="ya" required> Ingin menerima balasan</label>
+        <label><input type="radio" name="balasan" value="tidak"> Tidak perlu balasan</label>
+      </div>
+
+      <!-- Tombol submit -->
+      <button type="submit" class="btn">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>📧 Email: balqisafradinata@gmail.com | 📸 Instagram: @balqisafradinata</p>
+  </footer>
+
+  <script>
+    function sendForm(event) {
+      event.preventDefault();
+      alert("Form berhasil dikirim!");
+      return false;
+    }
+  </script>
+
+  <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('Service Worker terdaftar!'))
+    .catch((err) => console.log('SW gagal:', err));
+}
+</script>
+
+</body>
+</html>

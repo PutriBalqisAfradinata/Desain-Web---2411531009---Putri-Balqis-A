@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f472b6">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Balqis</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h1>About Me</h1>
+    <img src="balqis.jpg" alt="Foto saya" class="profile-pic">
+    <p>
+        Halo! Nama saya <b>Putri Balqis Afradinata</b>, biasa dipanggil Balqis.  
+    Saya adalah mahasiswa <b>Informatika</b> yang tertarik pada dunia teknologi,  
+    khususnya di bidang <b>desain grafis</b> dan <b>web development</b>
+    </p>
+  </section>
+
+  <footer>
+    <p>📧 Email: balqisafradinata@gmail.com | 📸 Instagram: @balqisafradinata</p>
+  </footer>
+
+  <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('Service Worker terdaftar!'))
+    .catch((err) => console.log('SW gagal:', err));
+}
+</script>
+
+</body>
+</html>
